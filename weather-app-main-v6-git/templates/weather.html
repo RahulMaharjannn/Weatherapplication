@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Report</title>
+  <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet"/>
+	<!-- icon for website <link rel="stylesheet" href="../static/css/style.css" <script defer src="../static/js/script.js"></script>> -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
+
+</body>
+</html>
+
+	<link rel="icon" href="../static/photos/cloud3.png" type="cloud/x-icon">
+  
+  
+ 
+
+
+</head>
+<body>
+  <header>
+    <!-- Logo and Navigation bar would go here -->
+    <nav>
+          <!-- This menu needs to look better its functional but not very god looking.-->
+      <form action="/index">
+        <button class="back-button">Back</button>
+      </form>
+      <div class="dropdown dropdown-2" aria-labelledby="navbarDropdown">
+        <button class="dropbtn">Weekly Reports</button>
+        <div class="dropdown-content dropdown_menu-2">
+            <button onclick="WtoggleHumidity('WtoggleHumidity1','WtoggleHumidity2','WtoggleHumidity3','WtoggleHumidity4','WtoggleHumidity5','WtoggleHumidity6','WtoggleHumidity7')">Weekly Humidity</button>
+            <button onclick="WtoggleUV('WtoggleUV1','WtoggleUV2','WtoggleUV3','WtoggleUV4','WtoggleUV5','WtoggleUV6','WtoggleUV7')">Weekly UV Index</button>
+            <button onclick="WtoggleWind('WtoggleWind1','WtoggleWind2','WtoggleWind3','WtoggleWind4','WtoggleWind5','WtoggleWind6','WtoggleWind7')">Weekly Wind Speed</button>
+            <button onclick="WtogglePrecip('WtogglePrecip1','WtogglePrecip2','WtogglePrecip3','WtogglePrecip4','WtogglePrecip5','WtogglePrecip6','WtogglePrecip7')">Weekly Precipitation Chance</button>
+        </div>
+    </div>
+    <div class="dropdown dropdown-2" aria-labelledby="navbarDropdown">
+        <button class="dropbtn">Hourly Reports</button>
+        <div class="dropdown-content dropdown_menu-2">
+            <button onclick="HtoggleHumidity('HtoggleHumidity1','HtoggleHumidity2','HtoggleHumidity3','HtoggleHumidity4','HtoggleHumidity5','HtoggleHumidity6','HtoggleHumidity7','HtoggleHumidity8')">Hourly Humidity</button>
+            <button onclick="HtoggleUV('HtoggleUV1','HtoggleUV2','HtoggleUV3','HtoggleUV4','HtoggleUV5','HtoggleUV6','HtoggleUV7','HtoggleUV8')">Hourly UV Index</button>
+            <button onclick="HtoggleWind('HtoggleWind1','HtoggleWind2','HtoggleWind3','HtoggleWind4','HtoggleWind5','HtoggleWind6','HtoggleWind7','HtoggleWind8')">Hourly Wind Speed</button>
+            <button onclick="HtogglePrecip('HtogglePrecip1','HtogglePrecip2','HtogglePrecip3','HtogglePrecip4','HtogglePrecip5','HtogglePrecip6','HtogglePrecip7','HtogglePrecip8')">Hourly Precipitation Chance</button>
+        </div>
+    </div>
+      <div class="logo"><img src="../static/photos/cloud3.png" alt="Logo"></div>
+    </nav>
+  </header>
+
+
+
+  <main>
+    <section class="report-container" id="home">
+      <h1 style="color:white">Here are your weather reports <p id="currentDateTime"> </p> <script src="../static/js/time.js"></script></h1>
+      <div class="report-cards" >
+        <div class="report-card-location" data-tilt>
+          <div class="logo"><img src="../static/photos/email_photo.png" alt="Logo" width="124" height="124"></div>
+          <h2>ChatGPT Weather Report</h2>
+          <p>{{message}}</p>
+        </div>
+      </div>
+      <br><br>
+      <div class="report-cards" >
+        <div class="report-card" data-tilt>
+          <h2>Weather in {{location}} </h2>
+          <p>Weather status: {{status}}</p>
+          <p>Temp is {{temp}}&deg;F but feels like {{feels_like}}&deg;F</p>
+          <p>Current humidity is {{humidity}}%</p>
+          <p>Current wind speed is {{wind_speed}} MPH</p>
+          <p>Current UV index is {{uv_index}}</p>
+        </div>
+        <div class="report-card" data-tilt>
+          <h2>Air Pollution</h2>
+          <p>Air Quality Index: {{aqi}}<br>
+          <p>Carbon Monoxide: {{co}}<br>
+          <p>Nitrogen Dioxide: {{no2}}<br>
+          <p>Ozone: {{o3}}<br>
+          <p>Ammonia: {{nh3}}</p>
+        </div>
+        <div class="report-card" data-tilt>
+          <h2>Weather Emergencies Near You</h2>
+          <p>{{alert}}</p>
+      </div>
+    </section>
+    <section class="update-signup" id = "weather" data-tilt>
+      <h2>Today's hourly forecast</h2>
+      <div class="flex-container">
+        <div>
+          {{one_hour}}
+          <br>{{one_hour_temp}}&deg;F<br>
+          <p>{{one_hour_description}}.</p>
+          <p id="HtoggleHumidity1">Humidity level: {{one_hour_humidity}}%</p>
+          <p id="HtoggleUV1">UV level: {{one_hour_uvi}}.</p>
+          <p id="HtoggleWind1">Wind Speed: {{one_hour_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{two_hours}}
+          <br>{{two_hours_temp}}&deg;F<br>
+          <p>{{two_hours_description}}.</p>
+          <p id="HtoggleHumidity2">Humidity level: {{two_hours_humidity}}%</p>
+          <p id="HtoggleUV2">UV level: {{two_hours_uvi}}.</p>
+          <p id="HtoggleWind2">Wind Speed: {{two_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{three_hours}}
+          <br>{{three_hours_temp}}&deg;F<br>
+          <p>{{three_hours_description}}.</p>
+          <p id="HtoggleHumidity3">Humidity level: {{three_hours_humidity}}%</p>
+          <p id="HtoggleUV3">UV level: {{three_hours_uvi}}.</p>
+          <p id="HtoggleWind3">Wind Speed: {{three_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{four_hours}}
+          <br>{{four_hours_temp}}&deg;F<br>
+          <p>{{four_hours_description}}.</p>
+          <p id="HtoggleHumidity4">Humidity level: {{four_hours_humidity}}%</p>
+          <p id="HtoggleUV4">UV level: {{four_hours_uvi}}.</p>
+          <p id="HtoggleWind4">Wind Speed: {{four_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{five_hours}}
+          <br>{{five_hours_temp}}&deg;F<br>
+          <p>{{five_hours_description}}.</p>
+          <p id="HtoggleHumidity5">Humidity level: {{five_hours_humidity}}%</p>
+          <p id="HtoggleUV5">UV level: {{five_hours_uvi}}.</p>
+          <p id="HtoggleWind5">Wind Speed: {{five_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{six_hours}}
+          <br>{{six_hours_temp}}&deg;F<br>
+          <p>{{six_hours_description}}.</p>
+          <p id="HtoggleHumidity6">Humidity level: {{six_hours_humidity}}%</p>
+          <p id="HtoggleUV6">UV level: {{six_hours_uvi}}.</p>
+          <p id="HtoggleWind6">Wind Speed: {{six_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{seven_hours}}
+          <br>{{seven_hours_temp}}&deg;F<br>
+          <p>{{seven_hours_description}}.</p>
+          <p id="HtoggleHumidity7">Humidity level: {{seven_hours_humidity}}%</p>
+          <p id="HtoggleUV7">UV level: {{seven_hours_uvi}}.</p>
+          <p id="HtoggleWind7">Wind Speed: {{seven_hours_wind_speed}} MPH</p>
+        </div>
+        <div>
+          {{eight_hours}}
+          <br>{{eight_hours_temp}}&deg;F<br>
+          <p>{{eight_hours_description}}.</p>
+          <p id="HtoggleHumidity8">Humidity level: {{eight_hours_humidity}}%</p>
+          <p id="HtoggleUV8">UV level: {{eight_hours_uvi}}.</p>
+          <p id="HtoggleWind8">Wind Speed: {{eight_hours_wind_speed}} MPH</p>
+        </div>
+      </div>
+    </section>
+    <section class="update-signup" id = "forecast" data-tilt>
+      <h2>This week's forecast</h2>
+      <div class="flex-container">
+        <div> 
+          <b> {{day_one}} </b> <br>
+          <p>
+            {{day_one_status}}. <br><br>
+            Projected high temp:  {{day_one_max_temp}}&deg;F<br>
+            Projected low temp: {{day_one_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity1">Projected humidity level: {{day_one_hum}}%</p>
+          <p id="WtoggleUV1">UV level: {{day_one_uvi}}</p>
+          <p id="WtoggleWind1">Wind Speed: {{day_one_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_two}} </b> <br>
+          <p>
+            {{day_two_status}}. <br><br>
+            Projected high temp:  {{day_two_max_temp}}&deg;F<br>
+            Projected low temp: {{day_two_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity2">Projected humidity level: {{day_two_hum}}%</p>
+          <p id="WtoggleUV2">UV level: {{day_two_uvi}}</p>
+          <p id="WtoggleWind2">Wind Speed: {{day_two_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_three}}. </b> <br>
+          <p>
+            {{day_three_status}}. <br><br>
+            Projected high temp:  {{day_three_max_temp}}&deg;F<br>
+            Projected low temp: {{day_three_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity3">Projected humidity level: {{day_three_hum}}%</p>
+          <p id="WtoggleUV3">UV level: {{day_three_uvi}}</p>
+          <p id="WtoggleWind3">Wind Speed: {{day_three_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_four}} </b> <br>
+          <p>
+            {{day_four_status}}. <br><br>
+            Projected high temp:  {{day_four_max_temp}}&deg;F<br>
+            Projected low temp: {{day_four_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity4">Projected humidity level: {{day_four_hum}}%</p>
+          <p id="WtoggleUV4">UV level: {{day_four_uvi}}</p>
+          <p id="WtoggleWind4">Wind Speed: {{day_four_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_five}} </b> <br>
+          <p>
+            {{day_five_status}}. <br><br>
+            Projected high temp:  {{day_five_max_temp}}&deg;F<br>
+            Projected low temp: {{day_five_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity5">Projected humidity level: {{day_five_hum}}%</p>
+          <p id="WtoggleUV5">UV level: {{day_five_uvi}}</p>
+          <p id="WtoggleWind5">Wind Speed: {{day_five_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_six}} </b> <br>
+          <p>
+            {{day_six_status}}. <br><br>
+            Projected high temp:  {{day_six_max_temp}}&deg;F<br>
+            Projected low temp: {{day_six_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity6">Projected humidity level: {{day_six_hum}}%</p>
+          <p id="WtoggleUV6">UV level: {{day_six_uvi}}</p>
+          <p id="WtoggleWind6">Wind Speed: {{day_six_wind_speed}} MPH</p>
+        </div>
+        
+        <div> 
+          <b> {{day_seven}} </b> <br>
+          <p>
+            {{day_seven_status}}. <br><br>
+            Projected high temp:  {{day_seven_max_temp}}&deg;F<br>
+            Projected low temp: {{day_seven_min_temp}}&deg;F<br>
+          </p>
+          <p id="WtoggleHumidity7">Projected humidity level: {{day_seven_hum}}%</p>
+          <p id="WtoggleUV7">UV level: {{day_seven_uvi}}</p>
+          <p id="WtoggleWind7">Wind Speed: {{day_seven_wind_speed}} MPH</p>
+        </div>
+      
+      </div>
+    </section>
+    <!-- Footer content goes here <script src="vanilla-tilt.js"></script> -->
+  </main>
+  <footer>
+    <!-- Footer content goes here -->
+	  © 2024 Disclaimer: this website is developed as an educational project”. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use.
+  </footer>
+
+  <!-- Functions for toggleable text, I tried to put it in the sript.js but it didnt work idk why. basically put the ids in the argument for the function and that text will be toggleable. Theres prolly a better way to put this in but for now this will work if dont have too many arguments for one function. -->
+  <script>
+    function WtoggleHumidity() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function WtoggleUV() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function WtoggleWind() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function WtogglePrecip() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function HtoggleHumidity() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function HtoggleUV() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function HtoggleWind() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    function HtogglePrecip() {
+    for (var i = 0; i < arguments.length; i++) {
+        var textElement = document.getElementById(arguments[i]);
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+    }
+    </script>
+
+<script src="../static/js/script.js"></script>
+
+</body>
+</html>
+

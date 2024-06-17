@@ -1,0 +1,8 @@
+user=sweber1917
+email=sweber1917@gmail.com
+zipcode=22551
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

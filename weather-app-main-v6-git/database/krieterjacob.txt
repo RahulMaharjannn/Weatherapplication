@@ -1,0 +1,8 @@
+user=krieterjacob
+email=krieterjacob@gmail.com
+zipcode=22551
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

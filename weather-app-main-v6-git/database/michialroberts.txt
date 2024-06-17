@@ -1,0 +1,8 @@
+user=michialroberts
+email=michialroberts@rocketmail.com
+zipcode=23453
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

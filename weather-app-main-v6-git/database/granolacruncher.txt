@@ -1,0 +1,8 @@
+user=granolacruncher
+email=granolacruncher@gmail.com
+zipcode=23503
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

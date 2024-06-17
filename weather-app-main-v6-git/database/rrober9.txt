@@ -1,0 +1,8 @@
+user=rrober9
+email=rrober8@gmu.edu
+zipcode=20120
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

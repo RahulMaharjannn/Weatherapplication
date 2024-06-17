@@ -1,0 +1,8 @@
+user=tbui28
+email=tbui28@gmu.edu
+zipcode=22033
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

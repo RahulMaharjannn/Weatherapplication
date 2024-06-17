@@ -1,0 +1,8 @@
+user=jamico
+email=jamico@gmu.edu
+zipcode=20176
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

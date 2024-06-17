@@ -1,0 +1,8 @@
+user=mweber1014
+email=mweber1014@gmail.com
+zipcode=20120
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

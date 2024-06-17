@@ -1,0 +1,8 @@
+user=rrober8
+email=rrober8@proton.me
+zipcode=20120
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

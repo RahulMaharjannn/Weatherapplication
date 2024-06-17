@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Report</title>
+  <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet"/>
+	<!-- icon for website <link rel="stylesheet" href="../static/css/style.css"      <div class="logo"><img src="../static/photos/cloud3.png" alt="Logo"></div>> -->
+	<link rel="icon" href="../static/photos/cloud3.png" type="cloud/x-icon">
+  
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
+
+
+</head>
+<body>
+  <header>
+    <!-- Logo and Navigation bar would go here -->
+    <nav>
+
+    </nav>
+  </header>
+
+
+
+  <main >
+    <section class="report-container" id="home">
+      <div class="report-cards-home" >
+        <div class="report-card-location" data-tilt>
+            <div class="logo"><img src="../static/photos/email_photo.png" alt="Logo" width="124" height="124"></div>
+          <h2>Enter your location</h2>
+          
+          <form action="/weather" method="POST" onsubmit="setDefaultCheckboxValues()">
+            <input type="text" name="zipcode" placeholder="Enter zipcode/Username"><br>
+        
+            <h2>Or create an account</h2>
+            <input type="text" name="username" placeholder="Enter new username"><br>
+            <input type="text" name="email" placeholder="Enter email"><br>
+            <input type="text" name="userZip" placeholder="Enter Zipcode"><br>
+        
+            <label for="tempPref">Temperature Alerts?</label>
+            <input type="checkbox" name="tempPref" id="tempPref" value="Y"><br>
+        
+            <label for="precipPref">Precipitation Alerts?</label>
+            <input type="checkbox" name="precipPref" id="precipPref" value="Y"><br>
+        
+            <label for="windPref">Wind Speed Alerts?</label>
+            <input type="checkbox" name="windPref" id="windPref" value="Y"><br>
+        
+            <label for="uvPref">UV Index Alerts?</label>
+            <input type="checkbox" name="uvPref" id="uvPref" value="Y"><br>
+        
+            <label for="humidityPref">Humidity Alerts?</label>
+            <input type="checkbox" name="humidityPref" id="humidityPref" value="Y"><br>
+        
+            <input type="submit" value="Submit">
+            <p style="color: red">{{ warning_message }}</p>
+        </form>
+        
+        <!-- Set default values for checkboxes -->
+        
+
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+	
+  <footer>
+    <!-- Footer content goes here -->
+	  © 2024 Disclaimer: this website is developed as an educational project”. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use.
+  </footer>
+
+  <script>
+    function setDefaultCheckboxValues() {
+        var tempPrefCheckbox = document.getElementById('tempPref');
+        if (!tempPrefCheckbox.checked) {
+            tempPrefCheckbox.value = 'N';
+        }
+        
+        var precipPrefCheckbox = document.getElementById('precipPref');
+        if (!precipPrefCheckbox.checked) {
+            precipPrefCheckbox.value = 'N';
+        }
+
+        var windPrefCheckbox = document.getElementById('windPref');
+        if (!windPrefCheckbox.checked) {
+            windPrefCheckbox.value = 'N';
+        }
+
+        var uvPrefCheckbox = document.getElementById('uvPref');
+        if (!uvPrefCheckbox.checked) {
+            uvPrefCheckbox.value = 'N';
+        }
+
+        var humidityPrefCheckbox = document.getElementById('humidityPref');
+        if (!humidityPrefCheckbox.checked) {
+            humidityPrefCheckbox.value = 'N';
+        }
+    }
+    
+</script>
+<script src="../static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+user=ryansica
+email=ryansica@gmail.com
+zipcode=20103
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

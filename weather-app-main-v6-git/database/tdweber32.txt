@@ -1,0 +1,8 @@
+user=tdweber32
+email=tdweber32@yahoo.com
+zipcode=22556
+temp=N
+precipitation=N
+windSpeed=N
+uv=N
+humidity=N

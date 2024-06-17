@@ -1,0 +1,417 @@
+@charset "UTF-8";
+/* CSS Document */
+:root {
+  --dark-bg: #FFFFFF;
+  --light-text: #F2F2F7;
+	--dark-text: black;
+  --accent-color: #13828d;
+  --border-color: #3A3A3C;
+  --button-hover: #4B98C6;
+}
+
+body {
+  font-family:  'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+  margin: 0;
+  padding: 0;
+	box-sizing:  content-box;
+  padding-bottom: 300px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('../photos/pexels-instawalli-169789.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: 60%; 
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 2px solid white;
+  flex-wrap: wrap;
+}
+
+nav button {
+  padding: 10px 20px; /* Adjust padding */
+  margin: 0 10px; /* Adjust margin */
+  background-color: var(--accent-color); /* Use accent color */
+  font-size: 16px; /* Adjust font size */
+  color: var(--dark-bg); /* Use dark background color for text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--button-hover);
+}
+
+nav a, .logo {
+  text-decoration: none;
+  color: var(--light-text);
+  margin: 0 1em; /* Adjust margin */
+}
+
+nav .logo {
+  font-size: 1.5em; /* Adjust font size */
+  font-weight: bold;
+  color: var(--dark-text); /* Use dark text color */
+}
+
+header button {
+  padding: 0.5em 1em;
+  margin: 0 10px;
+  background-color: var(--accent-color);
+  font-size: larger;
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header button:hover {
+  background-color: var(--button-hover);
+}
+
+
+
+
+
+.report-container h1 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.report-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em;
+}
+
+.report-cards-home {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 20em;
+}
+
+.report-card {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+	width: 90%;
+  max-width: 350px;
+  border-top: 1px solid rgba(255,255,255,0.65);
+  border-left: 1px solid rgba(255,255,255,0.65);
+  border-radius: 16px;
+  padding: 50px 25px;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 30px rgba(255, 255,0,0.1);
+  backdrop-filter: blur(5px);
+  word-wrap: break-word;
+  max-height: 300px; /* Adjust the value as needed */
+  overflow-y: auto;
+}
+
+.report-card h2{
+	color: rgba(255,255,255,0.9);
+  margin-top: 2px;
+  font-size: 1.75rem;
+}
+.report-card p{
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+}
+
+.report-card a{
+  display: inline-block;
+  background-color: rgba(255,255,255,1);
+  padding: 12px 40px;
+  border-radius: 50px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: black;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+}
+
+
+.learn-more {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.update-signup {
+  border-top: 1px solid rgba(255,255,255,0.65);
+  border-left: 1px solid rgba(255,255,255,0.65);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 30px rgba(255, 255,0,0.1);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  margin-top: 2em;
+  padding: 2em 0;
+  border-top: 1px solid var(--dark-bg);
+  
+}
+
+.update-signup h2 {
+  margin-bottom: 0.5em;
+	color: rgba(255,255,255,0.9);
+  margin-top: 2px;
+  font-size: 1.75rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+	color: white;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 75px;
+}
+.flex-container > div > p {
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.submit-button{
+  padding-top: 0px;
+}
+
+.report-card-location {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  max-width: 800px;
+  border-top: 1px solid rgba(255, 255, 255, 0.65);
+  border-left: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  padding: 50px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(255, 255,0,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.report-card-location > p{
+  font-size: 24px;
+}
+
+.report-card-location > h2{
+  font-size: 32px;
+}
+
+.back-button {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  padding:1.3em 3em;
+  font-size: 12px;
+  margin: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color:#000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0,0,0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor:pointer;
+  outline: none;
+}
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+  background-color: #00cff4;
+  box-shadow: 0px 15px 20px rgba(13, 240, 252, 0.4);
+  color: #fff;
+  transform:translateY(-7px);
+}
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .report-card-location {
+      padding: 30px 15px; /* Reduce padding */
+  }
+  
+}
+/* Add media queries for smaller screens */
+@media screen and (max-width: 768px) {
+  .report-card, .report-card-location, .update-signup {
+    width: 90%; /* Reduce width for smaller screens */
+  }
+  
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width: 768px) {
+  .report-card, .report-card-location, .update-signup {
+    width: 90%; /* Reduce width for smaller screens */
+    max-width: 300px; /* Adjust max-width for smaller screens */
+    margin: 10px auto; /* Center the cards and add margin for better spacing */
+  }
+  
+  
+}
+
+@media screen and (max-width: 480px) {
+  .report-card, .report-card-location , .update-signup{
+    width: 100%; /* Further reduce width for even smaller screens */
+    max-width: 250px; /* Adjust max-width for even smaller screens */
+    margin: 10px auto; /* Center the cards and add margin for better spacing */
+  }
+  
+}
+/* Adjustments for iPhones */
+@media only screen and (max-width: 414px) {
+  .report-card, .report-card-location, .update-signup {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 300px; /* Adjust max-width for smaller screens */
+    margin: 10px auto; /* Center the cards and add margin for better spacing */
+  }
+}
+
+/* Dropdown button */
+.dropbtn {
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {
+  color: rgb(0, 155, 44);
+  background-color: #52e5ff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #2980B9;
+}
+
+.dropdown-.dropdown_menu-2 {
+  animation: rotateX 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
